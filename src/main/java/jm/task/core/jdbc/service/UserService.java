@@ -3,6 +3,7 @@ package jm.task.core.jdbc.service;
 import jm.task.core.jdbc.model.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserService {
     void createUsersTable();
@@ -13,7 +14,7 @@ public interface UserService {
 
     void removeUserById(long id);
 
-    List<User> getAllUsers();
+    Optional<List<User>> getAllUsers();
 
     void cleanUsersTable();
 }

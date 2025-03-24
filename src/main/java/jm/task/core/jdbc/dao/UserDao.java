@@ -3,6 +3,7 @@ package jm.task.core.jdbc.dao;
 import jm.task.core.jdbc.model.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserDao {
     void createUsersTable() ;
@@ -13,7 +14,7 @@ public interface UserDao {
 
     void removeUserById(long id);
 
-    List<User> getAllUsers();
+    Optional<List<User>> getAllUsers();
 
     void cleanUsersTable();
 }

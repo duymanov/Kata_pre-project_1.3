@@ -2,15 +2,14 @@ package jm.task.core.jdbc.service;
 
 import jm.task.core.jdbc.dao.UserDao;
 import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
-//import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public class UserServiceImpl implements UserService {
 
 
-//    UserDao userDao = new UserDaoJDBCImpl();
     UserDao userDao = new UserDaoHibernateImpl();
 
     public void createUsersTable() {
@@ -34,8 +33,8 @@ public class UserServiceImpl implements UserService {
        System.out.println("OK4");
     }
 
-    public List<User> getAllUsers() {
-     List<User> users = userDao.getAllUsers();
+    public Optional<List<User>> getAllUsers() {
+     Optional<List<User>> users = userDao.getAllUsers();
         return users;
     }
 
